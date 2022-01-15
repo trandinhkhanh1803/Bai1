@@ -1,47 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/almostBlack"
     android:orientation="vertical"
+    tools:ignore="HardcodedText"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calculator"
-
-        android:textSize="50sp" />
-
-    <EditText
-        android:id="@+id/etnum1"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nhap so thu nhat"
-        android:inputType="numberDecimal" />
+        android:layout_weight="2"
+        android:layout_height="0dp"
+        android:padding="20dp">
 
-    <EditText
-        android:id="@+id/etnum2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="nhap so thu hai"
-        android:inputType="numberDecimal" />
+        <TextView
+            android:id="@+id/workingTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:maxLines="2"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="viewResult"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
 
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cong hai so" />
+        <TextView
+            android:id="@+id/viewResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:maxLines="1"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
 
-    <TextView
-        android:id="@+id/txtResult"
-        android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:text="Kết quả" />
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+      style="@style/buttonRow">
+        <Button
+            style="@style/buttonNumber"
+            android:text="AC"
+            android:textColor="@color/red"
+            android:onClick="clearAction"/>
+
+        <Button
+            style="@style/buttonNumber"
+            android:text="<---"
+            android:textColor="@color/red"
+            android:onClick="backSpaceAction"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text=""
+             />
+        <Button
+            style="@style/buttonOperator"
+            android:text="/"/>
+    </LinearLayout>
+    <LinearLayout
+        style="@style/buttonRow">
+        <Button
+            style="@style/buttonNumber"
+            android:text="7"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="8"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="9"
+            />
+        <Button
+            style="@style/buttonOperator"
+            android:text="X"/>
+    </LinearLayout>
+    <LinearLayout
+        style="@style/buttonRow">
+        <Button
+            style="@style/buttonNumber"
+            android:text="4"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="5"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="6"
+            />
+        <Button
+            style="@style/buttonOperator"
+            android:text="-"/>
+    </LinearLayout>
+    <LinearLayout
+        style="@style/buttonRow">
+        <Button
+            style="@style/buttonNumber"
+            android:text="1"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="2"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="3"
+            />
+        <Button
+            style="@style/buttonOperator"
+            android:text="+"/>
+    </LinearLayout>
+    <LinearLayout
+        style="@style/buttonRow">
+        <Button
+            style="@style/buttonNumber"
+            android:text="."/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="0"/>
+        <Button
+            style="@style/buttonNumber"
+            android:text="="
+            android:layout_weight="2"
+            android:background="@color/orange"
+            android:textSize="40sp"
+            android:onClick="equalsAction"
+            />
+
+    </LinearLayout>
 
 
 </LinearLayout>

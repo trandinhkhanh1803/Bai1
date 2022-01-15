@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="calculator">Calculator</string>
+    <string name="nhap_so_thu_nhat">Nhap so thu nhat</string>
+    <string name="nhap_so_thu_hai">nhap so thu hai</string>
+    <string name="cong_hai_so">Cong hai so</string>
+    <string name="k_t_qu">Kết quả</string>
+    <string name="_9">9</string>
 </resources>
